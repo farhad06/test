@@ -1,0 +1,33 @@
+create table tableA (a_id number(2) not null, name char(5) not null primary key);
+create table tableb (b_id char(2) not null, name char(5) not null references tableA);
+insert into tableA(a_id,name) values(1,'apple');
+insert into tableA(a_id,name) values(2,'orange');
+insert into tableA(a_id,name) values(3,'tomato');
+insert into tableA(a_id,name) values(4,'cucuber');
+
+alter table tableA modify (name char(15));
+select * from tableA;
+
+rename tableb to tableB;
+desc tableB;
+alter table tableb modify (name char(15));
+insert into tableB values('A','apple');
+insert into tableB values('B','banana');
+insert into tableb values('C','cucuber');
+insert into tableB values('D','dill');
+select * from tableb;
+select * form tableA LEFT OUTER JOIN tableb ON tableA.name=tableb.name;
+drop table tableA;
+create table tableA (a_id number(2), name char(15));
+drop table tableb;
+drop table tableA;
+create table tableA (a_id number(2), name char(15));
+create table tableB (b_id char(2), name char(15));
+select * from tableA;
+select * from tableB;
+select * from tableA LEFT OUTER JOIN tableB ON tableA.name=tableb.name;
+select * from tableA RIGHT OUTER JOIN tableB ON tableA.name=tableb.name;
+select * from tableA FULL OUTER JOIN tableB ON tableA.name=tableb.name;
+select * from tableA INNER JOIN tableB ON tableA.name=tableb.name;
+select * from tableA CROSS JOIN tableB;
+select * from tableA LEFT  JOIN tableB ON tableA.name=tableb.name;

@@ -1,0 +1,12 @@
+select * from employees where emp_no between 1 and 5;
+select * from employees where birth_date between TO_DATE('01/Janaury/1995','DD/MON/YY') and TO_DATE('31/December/2001','DD/MON/YY');
+delete from employees where emp_no=10 and gender='M';
+delete from employees where first_name='KL';
+select dept_name from departments;
+select emp_no from dept_emp RIGHT JOIN dept_emp.dept_no=departments.dept_no where dept_name='MCA';
+select top 10 salary * from salaries;
+select * from employees order by first_name desc;
+update title set title='Computer Application' where emp_no=7;
+desc employees;
+rename  salaries to Salary;
+select sum(salary) from Salary; 
